@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body{
+            margin: 4px;
+            background: blueviolet;
+        }
+         center{
+
+background: white;
+height: 640px;
+width: 400px;
+text-align: -webkit-center;
+text-align: center;
+
+border: solid;
+margin-left: 500px;
+
+border-radius: 8px;
+border-color: #ccc !important;
+box-shadow: rgba(255,255,255,0.9)2px 2px;
+border-color: transparent;
+
+}
+input{
+             
+             width: 70%;
+            box-sizing: border-box;
+            font-size: 20px;
+            line-height: 20px;
+            border: 1px solid #ccc;
+/* line-height: 35px; */
+            padding: 20px;
+            border-radius: 15px;
+            outline: none;
+            color: #ccc;
+            color: rgba(0,0,0,0.7) !important;
+            margin-bottom: 14px;
+            margin-top: 10px;
+     }
+          
+
+
+
+
+    </style>
+</head>
+<body>
+    <center>
+    <form action="register" method="POST">
+        {% csrf_token %}
+        <input type="text" name="first_name" placeholder="First Name"><br>
+        <input type="text" name="last_name" placeholder="Last Name"><br>
+        <input type="text" name="username" placeholder="Username"><br>
+        <input type="email" name="email" placeholder="Email"><br>
+        <input type="password" name="password" placeholder="Password"><br>
+        <input type="password" name="password" placeholder="Confirm Password"><br>
+        <input type="submit"><br>
+    </form>
+</center>
+          <div>
+              {% for messages in messages %}
+              <h2> {{messages}}</h2>
+              {% endfor %}
+          </div>
+</body>
+</html>

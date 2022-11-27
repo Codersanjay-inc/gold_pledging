@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body{
+            background: dodgerblue;
+        }
+            center{
+
+                background: white;
+                height: 400px;
+                width: 400px;
+                text-align: -webkit-center;
+                text-align: center;
+                margin-top: 100px;
+                border: solid;
+                margin-left: 450px;
+   
+                border-radius: 8px;
+                border-color: #ccc !important;
+                box-shadow: rgba(255,255,255,0.9)2px 2px;
+                border-color: transparent;
+        
+         }
+         input{
+             
+                 width: 75%;
+                box-sizing: border-box;
+                font-size: 30px;
+                line-height: 35px;
+                border: 1px solid #ccc;
+    /* line-height: 35px; */
+                padding: 20px;
+                border-radius: 15px;
+                outline: none;
+                color: #ccc;
+                color: rgba(0,0,0,0.7) !important;
+                margin-bottom: 20px;
+         }
+         div{
+            margin-top: 40px;
+         }
+         span{
+             
+            font-size: 34px;
+            line-height: 46px;
+            text-transform: uppercase;
+            
+            width: 100%;
+            border-radius: 40px;
+            outline: none;
+            outline: 0;
+            
+            background: cornflowerblue;
+            cursor: pointer;
+            color: #fff;
+         }
+    </style>
+</head>
+<body>
+    <center><div class="log"> 
+                      <form action="login" method="POST">
+               {% csrf_token %}
+                    <input type="text" name="username" placeholder="username"><br>
+                    <input type="password" name="password" placeholder="password"><br>
+                    <span>
+                    <input type="submit"></span>
+                     </form>
+            </div>
+    </center> 
+         <div>
+               {% for messages in messages %}
+               <h2> {{messages}}</h2>
+               {% endfor %}
+          </div>
+</body> 
+</html>
